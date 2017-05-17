@@ -1,6 +1,6 @@
 <ion-view view-title="PEMBIAYAAN, SARANA DAN PRASARANA SERTA SISTEM INFORMASI">
     <ion-content ng-class="{expanded:isExpanded}">
-        <div class="content has-header">
+      <div class="content has-header">
             <h3>Perolehan dan alokasi Dana</h3>
             <h3 class="calm">Realisasi perolehan dan alokasi dana (termasuk hibah) dalam juta rupiah termasuk gaji, selama tiga tahun terakhir</h3>
             <label class="item item-input item-select">
@@ -9,13 +9,13 @@
 					</div>
 	        		<select ng-model="dt61.select">
 	        			<option ng-repeat="pd in realisasiperolehandana track by $index" value="{{$index}}">{{pd.jenis_dana}}</option>
-	        			
+
 	        		</select>
     		</label>
 	        		<canvas
-						  tc-chartjs-bar 
-						  chart-data="realisasiperolehandanagrapik" 
-						  chart-options="myOptions" 
+						  tc-chartjs-bar
+						  chart-data="realisasiperolehandanagrapik"
+						  chart-options="myOptions"
 						  chart-click="onChartClick(event)"
 						></canvas>
 
@@ -27,7 +27,7 @@
 	        		<select ng-model="dt62select.jenisdana">
 	        			<option value="0">Dana Operasional</option>
 	        			<option value="1">Data Investasi</option>
-	        			
+
 	        		</select>
     		</label>
     		<label class="item item-input item-select">
@@ -36,15 +36,79 @@
 					</div>
 	        		<select ng-model="dt62select.datadana">
 	        			<option ng-repeat="pd in datadana62 track by $index" value="{{$index}}">{{pd.jenis_penggunaan}}</option>
-	        			
+
 	        		</select>
     		</label>
     			<canvas
-						  tc-chartjs-pie 
-						  chart-data="datacart62" 
-						  chart-options="myOptions" 
+						  tc-chartjs-pie
+						  chart-data="datacart62"
+						  chart-options="myOptions"
 						  chart-click="onChartClick(event)"
 						></canvas>
+      <h3  class="calm">Dana untuk kegiatan penelitian pada tiga tahun terakhir yang melibatkan dosen yang bidang keahlianya sesuai dengan program studi</h3>
+      <div class="list card" ng-repeat="data in danakegiatan63 track by $index">
+       <div class="item positive">Nama	  : {{data.nama_dosen}}</div>
+       <div class="item">Judul Pelayanan/Pengabdian   : {{data.judul_pengabdian}}</div>
+       <div class="item">Tahun		 : {{data.tahun}}</div>
+       <div class="item">Sumber Dana  : {{data.sumber_dana}}</div>
+       <div class="item">Jumlah Dana  : {{data.jumlah_dana}}</div>
+      </div>
+      <h3  class="calm">Dana yang diperoleh dari/untuk kegiatan pelayanan/pengabdian kepada masyarakat pada tiga tahun terakhir</h3>
+      <div class="list card" ng-repeat="data in danakegiatan64 track by $index">
+         <div class="item positive">Nama	  : {{data.nama_dosen}}</div>
+         <div class="item">Judul Pelayanan/Pengabdian   : {{data.judul_pengabdian}}</div>
+         <div class="item">Tahun  		 : {{data.tahun}}</div>
+         <div class="item">Sumber Dana  : {{data.sumber_dana}}</div>
+         <div class="item">Jumlah Dana  : {{data.jumlah_dana}}</div>
+      </div>
+
+      <h3  class="calm">Data prasarana (kantor, ruang kelas, ruang laboratorium, studio, ruang perpustakaan, kebun percobaan dsb. kecuali ruang dosen yang dipergunakan PS dalam proses belajar mengajar</h3>
+      <div class="list card" ng-repeat="data in prasarana66 track by $index">
+         <div class="item">Jenis Prasarana	   : {{data.jenis_prasarana}}</div>
+         <div class="item">Jumlah Unit	   : {{data.jumlah_unit}}</div>
+         <div class="item">Total Luas (m2)	   : {{data.total_luas}}</div>
+         <div class="item">Kepemilikan	   : <span ng-if="data.sd==1">SD </span><span ng-if="data.sw==1">SW </span> </div>
+         <div class="item">Kondisi	   : <span ng-if="data.terawat==1">Terawat </span><span ng-if="data.tidak_terawat==1">Tidak Terawat </span></div>
+         <div class="item">Utilisasi (Jam/Minggu)   : {{data.utilitas}}</div>
+
+      </div>
+
+      <h3  class="calm">Data prasarana lain yang menunjang(misalnya tempat olah raga, ruang bersama, ruang himpunan mahasiswa, poliklinik)</h3>
+      <div class="list card" ng-repeat="data in prasarana67 track by $index">
+         <div class="item">Jenis Prasarana Penunjang	   : {{data.jenis_prasarana_penunjang}}</div>
+         <div class="item">Jumlah Unit	   : {{data.jumlah_unit}}</div>
+         <div class="item">Total Luas (m2)	   : {{data.total_luas}}</div>
+         <div class="item">Kepemilikan	   : <span ng-if="data.sd==1">SD </span><span ng-if="data.sw==1">SW </span> </div>
+         <div class="item">Kondisi	   : <span ng-if="data.terawat==1">Terawat </span><span ng-if="data.tidak_terawat==1">Tidak Terawat </span></div>
+         <div class="item">Utilisasi (Jam/Minggu)   : {{data.utilitas}}</div>
+
+      </div>
+
+      <h3  class="calm">Pustaka (buku teks, karya ilmiah, dan jurnal; termasuk juga dalam bentuk CD ROM dan media lainya)</h3>
+      <div class="list card" ng-repeat="data in pustaka68 track by $index">
+         <div class="item">Jenis Pustaka	 : {{data.jenis_pustaka}}</div>
+         <div class="item">Jumlah Judul	  : {{data.jumlah_judul}}</div>
+         <div class="item">Jumlah Copy  : {{data.jumlah_copy}}</div>
+
+      </div>
+
+      <h3  class="calm">Peralatan utama yang digunakan di laboratorium (tempat praktikum, bengkel, studio, ruang simulasi, rumah sakit, puskesmas/balai kesehatan, green house, lahan untuk pertanian, dan sejenisnya) yang digunakan dalam proses pembelajaran di jurusan/fakultas/PT</h3>
+      <div class="list card" ng-repeat="data in peralatan69 track by $index">
+        <div class="item item-devider assertive">Nama Laboratorium	   : {{data.nama_lab}}</div>
+            <div class="list listdalemlist" ng-repeat="datas in data.detail_peralatan_lab track by $index">
+              <div class="item">Jenis Peralatan Utama	   : {{datas.jenis_prasarana}}</div>
+              <div class="item">Jumlah Unit	   : {{datas.jumlah_unit}}</div>
+              <div class="item">Rasio Alat:Mhs per Kegiatan 	   : {{datas.rasio}}</div>
+              <div class="item">Kepemilikan	   : <span ng-if="datas.sd==1">SD </span><span ng-if="datas.sw==1">SW </span> </div>
+              <div class="item">Kondisi	   : <span ng-if="datas.rusak==0">Terawat </span><span ng-if="datas.rusak==1">Tidak Terawat </span></div>
+              <div class="item">Utilisasi (Jam/Minggu)   : {{datas.rerata_waktu_penggunaan}}</div>
+            </div>
+
+
+      </div>
+
+
+
         </div>
     </ion-content>
 </ion-view>

@@ -20,16 +20,138 @@ angular.module('starter.st6controller', [])
 
 	    // Activate ink for controller
 	    getdata61($http,$scope,$stateParams);
-	    getdata62($http,$scope,$stateParams);
-	    
+			getdata62($http,$scope,$stateParams);
+			getdata63($http,$scope,$stateParams);
+			getdata64($http,$scope,$stateParams);
+			getdata65($http,$scope,$stateParams);
+			getdata66($http,$scope,$stateParams);
+			getdata67($http,$scope,$stateParams);
+			getdata68($http,$scope,$stateParams);
+	    getdata69($http,$scope,$stateParams);
+
 
 	    ionicMaterialInk.displayEffect();
 
 
 
 
-	   
+
 });
+
+function getdata68($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+
+	$http({
+		method:"post",
+		url:ajaxurl1+"getdata68",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.pustaka68 = data.data;
+
+	},function(err){
+
+	});
+}
+function getdata69($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+
+	$http({
+		method:"post",
+		url:ajaxurl1+"getdata69",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.peralatan69 = data.data;
+
+	},function(err){
+
+	});
+}
+function getdata63($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+
+	$http({
+		method:"post",
+		url:ajaxurl1+"getdata63",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.danakegiatan63 = data.data;
+
+	},function(err){
+
+	});
+}
+
+function getdata64($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+
+	$http({
+		method:"post",
+		url:ajaxurl1+"getdata64",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.danakegiatan64 = data.data;
+
+	},function(err){
+
+	});
+}
+function getdata65($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+
+	$http({
+		method:"post",
+		url:ajaxurl1+"getdata65",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.prasarana65 = data.data;
+
+	},function(err){
+
+	});
+}
+function getdata66($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+
+	$http({
+		method:"post",
+		url:ajaxurl1+"getdata66",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.prasarana66 = data.data;
+
+	},function(err){
+
+	});
+}
+
+function getdata67($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+
+	$http({
+		method:"post",
+		url:ajaxurl1+"getdata67",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.prasarana67 = data.data;
+
+	},function(err){
+
+	});
+}
 
 function getdata62($http,$scope,$stateParams){
 var idsubmisi = $stateParams.idsubmisi;
@@ -45,15 +167,16 @@ var colors = ['#cca633', '#cccc33', '#a6cc33'];
 			console.log(data);
 			alldata = data.data;
 
-	},function(err){	
-		
+	},function(err){
+
 	});
+
 
 	$scope.$watch('dt62select.jenisdana',function(lama,baru){
 		// console.log(baru);
 		if(alldata!=null){
 			$scope.datadana62 = alldata[$scope.dt62select.jenisdana];
-			
+
 		}
 
 	});
@@ -62,7 +185,7 @@ var colors = ['#cca633', '#cccc33', '#a6cc33'];
 		if(alldata!=null){
 			$scope.datadana62 = alldata[$scope.dt62select.jenisdana];
 			$scope.datacart62 = {
-                                     
+
                                       labels: [
                                         "TH-2",
                                         "TH-1",
@@ -112,8 +235,8 @@ function getdata61($http,$scope,$stateParams){
 			console.log(data);
 			$scope.realisasiperolehandana = data.data;
 			datacollection = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	});
 
 	$scope.$watch('dt61.select',function(odval,newval){
@@ -122,7 +245,7 @@ function getdata61($http,$scope,$stateParams){
 			console.log(datacollection[$scope.dt61.select].jenis_dana);
 
 			$scope.realisasiperolehandanagrapik = {
-                                     
+
                                       labels: [
                                         "TH-2",
                                         "TH-1",
@@ -154,7 +277,7 @@ function getdata61($http,$scope,$stateParams){
 			console.log("");
 
 			$scope.realisasiperolehandanagrapik = {
-                                     
+
                                       labels: [
                                         "TH-2",
                                         "TH-1",
@@ -181,8 +304,8 @@ function getdata61($http,$scope,$stateParams){
                 };
 
 		}
-		
+
 
 	})
-	
+
 }

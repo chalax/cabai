@@ -77,3 +77,14 @@ p {
     position: fixed;
     bottom: 0;
 }
+.list.card > .item{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  min-height: 10px;
+}
+
+.listdalemlist> .item{
+  padding-top: 5px;
+  padding-bottom: 5px;
+  min-height: 10px;
+}
