@@ -1,0 +1,287 @@
+<ion-view view-title="Kemahasiswaan dan Lulusan">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content has-header">
+
+        		<!-- canvas untuk perbandingan daya tampung ts0 - 4 -->
+        		<h3>Data Profil Mahasiswa dan Lulusan</h3>
+        		 <label class="item item-input item-select">
+					<div class="input-label">
+					  Pilih Data
+					</div>
+	        		<select ng-model="dt31">
+	        			<option selected value="0">Data Daya Tampung Mahasiswa</option>
+	        			<option value="1">Data IPK Max Lulusan Reguler</option>
+	        			<option value="2">Data IPK Max Lulusan Reguler</option>
+	        			<option value="3">Data IPK Rata-rata Lulusan Reguler</option>
+	        			<option value="4">Jumlah Calon Mahasiswa Reguler Ikut Seleksi</option>
+	        			<option value="5">Jumlah Calon Mahasiswa Reguler Lulus Seleksi</option>
+	        			<option value="6">Jumlah Lulusan Reguler Non Transfer</option>
+	        			<option value="7">Jumlah Lulusan Reguler Transfer</option>
+	        			<option value="8">Jumlah Mahasiswa Baru Reguler Non Transfer</option>
+	        			<option value="9">Jumlah Mahasiswa Baru Reguler Transfe</option>
+	        			<option value="10">Total Mahasiswa Reguler Non Transfer</option>
+	        			<option value="11">Total Mahasiswa Reguler Transfer</option>
+	        			<option value="12">Persentase Lulusan Dengan IPK < 2,75</option>
+	        			<option value="13">Persentase Lulusan Dengan IPK > 3,50</option>
+	        			<option value="14">Persentase Lulusan Dengan IPK = 2,75</option>
+	        		</select>
+        		 </label>
+            	<canvas
+				  tc-chartjs-bar ng-if="dt31==0"
+				  chart-data="daya_tampung" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==1" 
+				  chart-data="ipk_max_lulusan_reguler" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==2" 
+				  chart-data="ipk_min_lulusan_reguler" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==3" 
+				  chart-data="ipk_rata_rata_lulusan_reguler" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==4" 
+				  chart-data="jumlah_calon_mahasiswa_reguler_ikut_seleksi" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==5" 
+				  chart-data="jumlah_calon_mahasiswa_reguler_lulus_seleksi" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==6" 
+				  chart-data="jumlah_lulusan_reguler_non_transfer" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==7" 
+				  chart-data="jumlah_lulusan_reguler_transfer" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==8" 
+				  chart-data="jumlah_mahasiswa_baru_reguler_non_transfer" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==9" 
+				  chart-data="jumlah_mahasiswa_baru_reguler_transfer" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==10" 
+				  chart-data="jumlah_total_mahasiswa_reguler_non_transfer" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==11" 
+				  chart-data="jumlah_total_mahasiswa_reguler_transfer" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==12" 
+				  chart-data="persentase_lulusan_dengan_ipk_kurdar_275" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==13" 
+				  chart-data="persentase_lulusan_dengan_ipk_lbdr_350" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt31==14" 
+				  chart-data="persentase_lulusan_dengan_ipk_smd_275" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+
+
+
+				<h3>Data Pencapaian Prestasi Mahasiswa</h3>
+				<div class="row">
+				  <div class="col">No</div>
+				  <div class="col">Tempat</div>
+				  <div class="col">Nama Prestasi</div>
+				  <div class="col">Tingkat</div>
+				</div>
+				<div class="row"  ng-repeat="prestasi in prestasis track by $index">
+				  <div class="col">{{$index}}</div>
+				  <div class="col">{{prestasi.nama_prestasi_dan_tempat_pelaksanaan}}</div>
+				  <div class="col">{{prestasi.prestasi_dicapai}}</div>
+				  <div class="col">{{prestasi.tingkat}}</div>
+				</div>
+
+				<h3>Data Mahsiswa 5 tahun terakhir</h3>
+				<label class="item item-input item-select">
+					<div class="input-label">
+					  Pilih Data
+					</div>
+	        		<select ng-model="dt33">
+	        			
+	        			<option value="1">Data TS-4</option>
+	        			<option value="2">Data TS-3</option>
+	        			<option value="3">Data TS-2</option>
+	        			<option value="4">Data TS-1</option>
+	        			<option value="5">Data TS-0</option>
+	        			
+	        		</select>
+        		 </label>
+				<canvas
+				  tc-chartjs-bar ng-if="dt33==1" 
+				  chart-data="datamahasiswaangkatan5tahunlalu" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt33==2" 
+				  chart-data="datamahasiswaangkatan4tahunlalu" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt33==3" 
+				  chart-data="datamahasiswaangkatan3tahunlalu" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt33==4" 
+				  chart-data="datamahasiswaangkatan2tahunlalu" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-bar ng-if="dt33==5" 
+				  chart-data="datamahasiswaangkatan1tahunlalu" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+
+
+
+				<h3>Layanan Kepada Mahasiswa</h3>
+				<div class="row">
+				  <div class="col">No</div>
+				  <div class="col">Jenis Pelayanan</div>
+				  <div class="col">Bentuk Kegiatan</div>
+				  <div class="col">Pelaksanaan</div>
+				  <div class="col">Hasil</div>
+				</div>
+				<div class="row"  ng-repeat="layanan in pelayanan track by $index">
+				  <div class="col">{{$index}}</div>
+				  <div class="col">{{layanan.jenis_pelayanan}}</div>
+				  <div class="col">{{layanan.bentuk_kegiatan}}</div>
+				  <div class="col">{{layanan.pelaksanaan}}</div>
+				  <div class="col">{{layanan.hasil}}</div>
+				</div>
+				
+
+				<h3>Usaha Usaha Program Studi/Jurusan Mencarikan Tempat Kerja Bagi Lulusannya Dalam Hal:</h3>
+
+				<div class="row">
+				  <div class="col">No</div>
+				  <div class="col">Jenis Upaya</div>
+				  <div class="col">Keterangan</div>
+				  
+				</div>
+				<div class="row"  ng-repeat="usaha in usahausaha track by $index">
+				  <div class="col">{{$index}}</div>
+				  <div class="col">{{usaha.jenis_usaha}}</div>
+				  <div class="col">{{usaha.keterangan}}</div>
+				
+				</div>
+
+
+
+				<h3>Evaluasi Kinerja Lulusan Oleh Pihak Pengguna Lulusan</h3>
+				<label class="item item-input item-select">
+					<div class="input-label">
+					  Pilih Data
+					</div>
+	        		<select ng-model="dt36">
+	        			
+	        			<option value="1">Komunikasi</option>
+	        			<option value="2">Kerjasama</option>
+	        			<option value="3">Kemandirian</option>
+	        			<option value="4">Kreativitas</option>
+	        			<option value="5">Kemampuan Menggunakan Alat</option>
+	        			
+	        		</select>
+        		 </label>
+				<canvas
+				  tc-chartjs-pie ng-if="dt36==1"
+				  chart-data="data36a" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+				<canvas
+				  tc-chartjs-pie ng-if="dt36==2"
+				  chart-data="data36b" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+
+				<canvas
+				  tc-chartjs-pie ng-if="dt36==3"
+				  chart-data="data36c" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+
+				<canvas
+				  tc-chartjs-pie ng-if="dt36==4"
+				  chart-data="data36d" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+
+				<canvas
+				  tc-chartjs-pie ng-if="dt36==5"
+				  chart-data="data36e" 
+				  chart-options="myOptions" 
+				  chart-click="onChartClick(event)"
+				></canvas>
+
+
+			<h3>Lembaga (Instansi/Industri) yang Memesan Lulusan Untuk Bekerja Di Lembaga Tersebut Dalam 5 Tahun Terakhir</h3>
+
+				<div class="row">
+				  <div class="col">Tahun</div>
+				  <div class="col">Lembaga/Instansi</div>
+				  <div class="col">Jumlah Yg Diwisuda</div>
+				  <div class="col">Jumlah Yg Diterima</div>
+				  
+				</div>
+				<div class="row"  ng-repeat="diminta in permintaan track by $index">
+				  <div class="col">{{diminta.tahun}}</div>
+				  <div class="col">{{diminta.nama_lembaga}}</div>
+				  <div class="col">{{diminta.jumlah_mahasiswa_diwisuda}}</div>
+				  <div class="col">{{diminta.jumlah_lulusan_diterima}}</div>
+				
+				</div>
+
+        </div>
+    </ion-content>
+</ion-view>

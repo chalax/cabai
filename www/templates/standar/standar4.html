@@ -1,0 +1,110 @@
+<ion-view view-title="SUMBER DAYA MANUSIA">
+    <ion-content ng-class="{expanded:isExpanded}" padding="true">
+        <div class="content">
+             <h3 class="calm">Dosen Tetap</h3>
+             <div class="list card" ng-repeat="dosen in datadosen track by $index">
+             	<div class="item positive">Nama   :	  {{dosen.nama_dosen}}</div>
+             	<div class="item">NIDN   :   {{dosen.nidn}} </div>
+             	<div class="item">Tgl-Lahir   :   {{dosen.tgl_ahir}} </div>
+             	<div class="item">Jabatan Akademik   :   {{dosen.jabatan_akademik}} </div>
+             	<div class="item">Sertifikat Dosen   :  
+             												<i ng-if="dosen.sertifikasi_dosen==1" class="icon ion-checkmark-round balanced"></i><i ng-if="dosen.sertifikasi_dosen==0" class="icon ion-close-round assertive"></i>
+             	</div>
+             	<div class="item">Pendidikan    :   {{dosen.pendidikan}} </div>
+             </div>
+
+             <h3 class="calm">Dosen Tetap yang Bidang Keahlianya Diluar Bidang PS:</h3>
+             <div class="list card" ng-repeat="dosen in datadosensesuaibidangps track by $index">
+             	<div class="item positive">Nama   :	  {{dosen.nama_dosen}}</div>
+             	<div class="item">NIDN   :   {{dosen.nidn}} </div>
+             	<div class="item">Tgl-Lahir   :   {{dosen.tgl_ahir}} </div>
+             	<div class="item">Jabatan Akademik   :   {{dosen.jabatan_akademik}} </div>
+             	<div class="item">Sertifikat Dosen   :   <i ng-if="dosen.sertifikasi_dosen==1" class="icon ion-checkmark-round balanced"></i><i ng-if="dosen.sertifikasi_dosen==0" class="icon ion-close-round assertive"></i> </div>
+             	<div class="item">Pendidikan    :   {{dosen.pendidikan}} </div>
+             </div>
+
+
+             <h3 class="calm">Aktivitas Dosen Tetap yang Bidang Keahlianya Sesuai PS Dinyatakan Dengan SKS Rata-Rata Per Semester Pada Satu Tahun Akademik Terakhir</h3>
+             <div class="list card" ng-repeat="data in dataajar1 track by $index">
+             	<div class="item">No. Sertifikat	   :	  {{data.no_sertifikat}}</div>
+             	<div class="item">Nama Dosen	   :	  {{data.nama_dosen}}</div>
+             	<div class="item">PD   :	  {{data.pd_ganjil}}</div>
+             	<div class="item">PL   :	  {{data.pd_genap}}</div>
+             	<div class="item">PG   :	  {{data.pg_ganjil}}</div>
+             	<div class="item">PK   :	  {{data.sum_ganjil}}</div>
+             	<div class="item">∑    :	  {{data.pg_genap}}</div>
+             	<div class="item">PD	   :	  {{data.pk_ganjil}}</div>
+             	<div class="item">PL	   :	  {{data.pk_genap}}</div>
+             	<div class="item">PG	   :	  {{data.pl_ganjil}}</div>
+             	<div class="item">PK   :	  {{data.pl_genap}}</div>
+             	<div class="item">∑	   :	  {{data.sum_genap}}</div>
+             	<div class="item">Status   :	  {{data.status}}</div>
+             	
+             </div>
+
+             <h1 class="assertive">Tuliskan Aktivitas Mengajar Dosesn Tetap yang Bidang Keahlianya Sesuai Dengan Bidang PS, Dalam Satu Tahun Akademik Terakhir Di PS ini
+
+Semster Ganjil & Genap</h1>
+
+
+
+			  <h3 class="calm">Aktivitas Mengajar Dosesn Tetap yang Bidang Keahlianya Diluar PS</h3>
+             <div class="list card" ng-repeat="data in dataajardosentidaktetap track by $index">
+             	<div class="item">Nama Dosen	:	  {{data.nama_dosen}}</div>
+             	<div class="item">Bidang Keahliah	:	  {{data.bidang_keahlian}}</div>
+             	<div class="item">Kode Mata Kuliah	:	  {{data.kode_matakuliah}}</div>
+             	<div class="item">Nama Mata Kuliah	:	  {{data.nama_matakuliah}}</div>
+             	<div class="item">Jumlah Kelas	:	  {{data.jumlah_kelas}}</div>
+             	<div class="item">Pertemuan Direncanakan	:	  {{data.jumlah_pertemuan_direncanakan}}</div>
+             	<div class="item">Pertemuan Dilaksanakan:	  {{data.jumlah_pertemuan_terlaksana}}</div>
+             	
+             </div>
+
+
+             <h3 class="calm">Dosen Tidak Tetap</h3>
+             <div class="list card" ng-repeat="dosen in datadosentt track by $index">
+             	<div class="item positive">Nama   :	  {{dosen.nama_dosen}}</div>
+             	<div class="item">NIDN   :   {{dosen.nidn}} </div>
+             	<div class="item">Tgl-Lahir   :   {{dosen.tgl_ahir}} </div>
+             	<div class="item">Jabatan Akademik   :   {{dosen.jabatan_akademik}} </div>
+             	<div class="item">Sertifikat Dosen   :  
+             												<i ng-if="dosen.sertifikasi_dosen==1" class="icon ion-checkmark-round balanced"></i><i ng-if="dosen.sertifikasi_dosen==0" class="icon ion-close-round assertive"></i>
+             	</div>
+             	<div class="item">Pendidikan    :   {{dosen.pendidikan}} </div>
+             </div>
+
+               <h3 class="calm">Data Aktivitas Mengajar Dosen Tidak Tetap Pada Satu Tahun Terakhir Di PS Ini</h3>
+             <div class="list card" ng-repeat="data in dataajardtt track by $index">
+             	<div class="item">Nama Dosen	:	  {{data.nama_dosen}}</div>
+             	<div class="item">Bidang Keahliah	:	  {{data.bidang_keahlian}}</div>
+             	<div class="item">Kode Mata Kuliah	:	  {{data.kode_matakuliah}}</div>
+             	<div class="item">Nama Mata Kuliah	:	  {{data.nama_matakuliah}}</div>
+             	<div class="item">Jumlah Kelas	:	  {{data.jumlah_kelas}}</div>
+             	<div class="item">Pertemuan Direncanakan	:	  {{data.jumlah_pertemuan_direncanakan}}</div>
+             	<div class="item">Pertemuan Dilaksanakan:	  {{data.jumlah_pertemuan_terlaksana}}</div>
+             	
+             </div>
+
+              <h3 class="calm">Kegiatan Tenaga Ahli/Pakar sebagai pembicara dalam seminar/pelatihan, Pembicara Tamu Dsb, Dari Luar PT Sendiri (Tidak Termasuk Dosen Tidak Tetap)</h3>
+             <div class="list card" ng-repeat="data in seminartenagaahli track by $index">
+             	<div class="item">Nama Tenaga Ahli/Pakar	:	  {{data.nama_tenaga_ahli}}</div>
+             	<div class="item">Nama dan Judul Kegiatan	:	  {{data.nama_kegiatan}}</div>
+             	<div class="item">Waktu Pelaksanaan	:	  {{data.waktu_pelaksanaan}}</div>
+             	
+             </div>
+
+             <h3 class="calm">Peningkatan kemampuan dosen tetap melalui program tugas belajar dalam bidang yang sesuai dengan bidang PS</h3>
+             <div class="list card" ng-repeat="data in peningkatandosen track by $index">
+             	<div class="item">Nama Dosen	:	  {{data.nama_dosen}}</div>
+             	<div class="item">Jenjang Pendidikan Lanjut	:	  {{data.jenjang_pendidikan_lanjut}}</div>
+             	<div class="item">Bidang Studi	:	  {{data.bidang_studi}}</div>
+             	<div class="item">Perguruan Tinggi	:	  {{data.perguruan_tinggi}}</div>
+             	<div class="item">Negara	:	  {{data.negara}}</div>
+             	<div class="item">Tahun Mulai Studi	:	  {{data.tahun_mulai_studi}}</div>
+             	
+             </div>
+
+ 
+        </div>
+    </ion-content>
+</ion-view>

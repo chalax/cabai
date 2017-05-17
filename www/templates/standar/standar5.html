@@ -1,0 +1,86 @@
+<ion-view view-title="KURIKULUM, PEMBELAJARAN, DAN SUASANA AKADEMIK">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content has-header">
+            
+			  <h3 class="calm">Struktur Kurikulum</h3>
+             <div class="list card" ng-repeat="data in strukturkurikulum track by $index">
+             	<div class="item">Semester		:	  {{data.semester}}</div>
+             	<div class="item">Kode Mata Kuliah		:	  {{data.kode_mk}}</div>
+             	<div class="item">Nama Mata Kuliah		:	  {{data.nama_mk}}</div>
+             	<div class="item">Bobot SKS Kuliah		:	  {{data.bobot_sks_kuliah}}</div>
+             	<div class="item">Bobot SKS Praktikum	:	  {{data.bobot_Sks_praktikum}}</div>
+             	<div class="item">Bobot Tugas		:	  {{data.bobot_tugas}}</div>
+             	<div class="item">Inti	:	  {{data.inti}}</div>
+             	<div class="item">Institusional		:	  {{data.institusional}}</div>
+             	<div class="item">Kelengkapan Deskripsi		:	  {{data.kelengkapan_deskripsi}}</div>
+             	<div class="item">Kelengkapan Silabus		:	  {{data.kelengkapan_silabus}}</div>
+             	<div class="item">Kelengkapan SAP	:	  {{data.kelengkapan_sap}}</div>
+             	<div class="item">Unit/jur/fak Penyelenggara	:	  {{data.unit_penyelenggara}}</div>
+             	
+             	
+             </div>
+
+
+              <h3 class="calm">Substansi Praktukum/Praktek yang mandiri ataupun yang merupakan bagian dari mata kuliah tertentu</h3>
+             <div class="list card" ng-repeat="data in substansi track by $index">
+             	<div class="item">Nama Praktikum/Praktek			:	  {{data.nama_praktikum}}</div>
+             	<div class="item">Judul/Modul			:	  {{data.judul_modul}}</div>
+             	<div class="item">Jam Pelaksanaan		:	  {{data.jam_pelaksanaan}}</div>
+             	<div class="item">Tempat/Lokasi Praktikum/Praktek		:	  {{data.tempat_praktikum}}</div>
+             	
+             </div>
+
+             <h3 class="calm">Contoh soal ujian dalam satu tahun terakhir untuk 5 mata kuliah keahlian berikut silabusnya</h3>
+             <div class="list card">
+             	<div class="item assertive">Semester Ganjil</div>
+             	<div class="item item-icon-right" ng-repeat="data in contohsoalujian[0] track by $index">{{data.kode_nama_makul}} 
+ 				<i ng-click="savefile({{data.id_attachmentfile}})" class="icon ion-android-archive"></i>
+             	</div>
+             </div>
+             <div class="list card">
+             	<div class="item assertive">Semester Genap</div>
+             	<div class="item item-icon-right" ng-repeat="data in contohsoalujian[1] track by $index">{{data.kode_nama_makul}} <i ng-click="savefile({{data.id_attachmentfile}})" class="icon ion-android-archive"></i>
+             	</div>
+             </div>
+
+             <h3 class="calm">Hasil Peninjauan, Khusus untuk silabus/SAP mata kuliah</h3>
+             <div class="list card" ng-repeat="data in hasiltinjauan track by $index">
+             	<div class="item">No. MK		 : {{data.no_mk}}</div>
+             	<div class="item">Nama MK	 : {{data.nama_mk}}</div>
+             	<div class="item">MK Baru/Lama/Hapus		 : {{data.mk_baru_lama_hapus}}</div>
+             	<div class="item">Perubahan Pada	 : <span ng-if="data.perubahan_silabus==1">Silabus</span><span ng-if="data.perubahan_buku_ajar==1">Buku Ajar</span></div>
+             	<div class="item">Alasan Peninjauan		 : {{data.alasan_peninjauan}}</div>
+             	<div class="item">Atas Usulan/Masukan dari		 : {{data.usulan_dari}}</div>
+             	<div class="item">Berlaku Mulai Sem./Th.	 : {{data.berlaku_mulai}}</div>
+             	
+             </div>
+
+             <h3 class="calm">Dosen pembimbing akademik/wali dan jumlah mahasiswa yang dibimbingnya</h3>
+             <div class="list card" ng-repeat="data in pembimbing track by $index">
+             	<div class="item">Nama Dosen 		 : {{data.nama_dosen}}</div>
+             	<div class="item">Jumlah Mahasiswa Bimbingan		 : {{data.jumlah_mahasiswa}}</div>
+             	<div class="item">Rata-rata Pertemuan/mhs/semester	 : {{data.rerata_pertemuan}}</div>
+             	
+             	
+             </div>
+             <h3 class="calm">Dosen yang menjadi pembimbing karya/tugas akhir, dan jumlah mahasiswa bimbinganya</h3>
+             <div class="list card" ng-repeat="data in pembimbingta track by $index">
+             	<div class="item">TH	 : -{{data.th}}</div>
+             	<div class="item">Nama Dosen 		 : {{data.nama_dosen}}</div>
+             	<div class="item">Jumlah Mahasiswa Bimbingan		 : {{data.jumlah_mahasiswa}}</div>
+             	
+             	
+             </div>
+             <h3 class="calm">Keselamatan Kerja</h3>
+             <div class="list card" ng-repeat="data in keselamatankerja track by $index">
+             	
+             	<div class="item">Nama Peralatan/Bahan 		 : {{data.nama_peralatan}}</div>
+             	<div class="item">Fungsi		 : {{data.fungsi}}</div>
+             	
+             	
+             </div>
+
+
+        </div>
+    </ion-content>
+</ion-view>

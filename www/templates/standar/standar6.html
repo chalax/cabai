@@ -1,0 +1,50 @@
+<ion-view view-title="PEMBIAYAAN, SARANA DAN PRASARANA SERTA SISTEM INFORMASI">
+    <ion-content ng-class="{expanded:isExpanded}">
+        <div class="content has-header">
+            <h3>Perolehan dan alokasi Dana</h3>
+            <h3 class="calm">Realisasi perolehan dan alokasi dana (termasuk hibah) dalam juta rupiah termasuk gaji, selama tiga tahun terakhir</h3>
+            <label class="item item-input item-select">
+					<div class="input-label">
+					  Pilih Jenis Dana
+					</div>
+	        		<select ng-model="dt61.select">
+	        			<option ng-repeat="pd in realisasiperolehandana track by $index" value="{{$index}}">{{pd.jenis_dana}}</option>
+	        			
+	        		</select>
+    		</label>
+	        		<canvas
+						  tc-chartjs-bar 
+						  chart-data="realisasiperolehandanagrapik" 
+						  chart-options="myOptions" 
+						  chart-click="onChartClick(event)"
+						></canvas>
+
+			<h3  class="calm">Persentase Penggunaan Dana</h3>
+			<label class="item item-input item-select">
+					<div class="input-label">
+					  Pilih Jenis Dana
+					</div>
+	        		<select ng-model="dt62select.jenisdana">
+	        			<option value="0">Dana Operasional</option>
+	        			<option value="1">Data Investasi</option>
+	        			
+	        		</select>
+    		</label>
+    		<label class="item item-input item-select">
+					<div class="input-label">
+					  Pilih Jenis Dana
+					</div>
+	        		<select ng-model="dt62select.datadana">
+	        			<option ng-repeat="pd in datadana62 track by $index" value="{{$index}}">{{pd.jenis_penggunaan}}</option>
+	        			
+	        		</select>
+    		</label>
+    			<canvas
+						  tc-chartjs-pie 
+						  chart-data="datacart62" 
+						  chart-options="myOptions" 
+						  chart-click="onChartClick(event)"
+						></canvas>
+        </div>
+    </ion-content>
+</ion-view>
