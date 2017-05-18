@@ -6,7 +6,7 @@
 // 'starter.controllers' is found in controllers.js
 var ajaxurl = "http://127.0.0.1/sikaprodi2/mctrl/";
 var ajaxurl1 = "http://127.0.0.1/sikaprodi2/mctrl1/";
-angular.module('starter', ['ionic', 'starter.controllers','starter.st4controller','starter.st5controller','starter.st6controller', 'ionic-material', 'ionMdInput','tc.chartjs'])
+angular.module('starter', ['ionic', 'starter.controllers','starter.st4controller','starter.st5controller','starter.st6controller','starter.st7controller', 'ionic-material', 'ionMdInput','tc.chartjs'])
 
 .run(function($ionicPlatform) {
     $ionicPlatform.ready(function() {

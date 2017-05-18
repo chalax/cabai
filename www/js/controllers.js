@@ -173,7 +173,7 @@ angular.module('starter.controllers', [])
             $scope.submissions = data.data;
 
 
-    },function(err){    
+    },function(err){
         console.log(err);
     });
 
@@ -224,9 +224,9 @@ angular.module('starter.controllers', [])
             case 7:
                 $state.go("app.standar7",{idsubmisi:kadal});
                 break;
-               
+
         }
-        
+
     }
 
     $timeout(function() {
@@ -266,14 +266,14 @@ angular.module('starter.controllers', [])
                 var dtts1 = data.data[3];
                 var dtts0 = data.data[4];
 
-                
+
                 var colors = ['#cc5933','#cc8033','#cca633', '#cccc33', '#a6cc33', '#80cc33', '#59cc33', '#33cc33', '#33cc59', '#33cc80', '#33cca6', '#33cccc', '#33a6cc', '#3380cc', '#3359cc', '#3333cc'];
 
 
-                
+
 
                 $scope.daya_tampung = {
-                 
+
                   labels: [
                     "TS0",
                     "TS1",
@@ -296,7 +296,7 @@ angular.module('starter.controllers', [])
                   ]
                 };
                     $scope.ipk_max_lulusan_reguler = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -319,7 +319,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.ipk_min_lulusan_reguler = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -342,7 +342,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.ipk_rata_rata_lulusan_reguler = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -365,7 +365,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.jumlah_calon_mahasiswa_reguler_ikut_seleksi = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -388,7 +388,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.jumlah_calon_mahasiswa_reguler_lulus_seleksi = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -411,7 +411,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.jumlah_lulusan_reguler_non_transfer = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -434,7 +434,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.jumlah_lulusan_reguler_transfer = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -457,7 +457,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.jumlah_mahasiswa_baru_reguler_non_transfer = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -480,7 +480,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.jumlah_mahasiswa_baru_reguler_transfer = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -503,7 +503,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.jumlah_total_mahasiswa_reguler_non_transfer = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -526,7 +526,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.jumlah_total_mahasiswa_reguler_transfer = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -549,7 +549,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.persentase_lulusan_dengan_ipk_kurdar_275 = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -572,7 +572,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.persentase_lulusan_dengan_ipk_lbdr_350 = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -595,7 +595,7 @@ angular.module('starter.controllers', [])
                                       ]
                                     };
                     $scope.persentase_lulusan_dengan_ipk_smd_275 = {
-                                     
+
                                       labels: [
                                         "TS0",
                                         "TS1",
@@ -632,7 +632,7 @@ angular.module('starter.controllers', [])
                 };
 
 
-        },function(err){    
+        },function(err){
             console.log(err);
         });
 
@@ -680,10 +680,10 @@ angular.module('starter.controllers', [])
                 var colors = ['#cc5933','#cc8033','#cca633', '#cccc33', '#a6cc33', '#80cc33', '#59cc33', '#33cc33', '#33cc59', '#33cc80', '#33cca6', '#33cccc', '#33a6cc', '#3380cc', '#3359cc', '#3333cc'];
 
 
-                
+
 
                 $scope.datamahasiswaangkatan5tahunlalu = {
-                 
+
                   labels: [
                     "TS-4",
                     "TS-3",
@@ -719,7 +719,7 @@ angular.module('starter.controllers', [])
                 };
 
                 $scope.datamahasiswaangkatan4tahunlalu = {
-                 
+
                   labels: [
                     "TS-4",
                     "TS-3",
@@ -755,7 +755,7 @@ angular.module('starter.controllers', [])
                 };
 
                 $scope.datamahasiswaangkatan3tahunlalu = {
-                 
+
                   labels: [
                     "TS-4",
                     "TS-3",
@@ -790,7 +790,7 @@ angular.module('starter.controllers', [])
                     }
                 };
                 $scope.datamahasiswaangkatan2tahunlalu = {
-                 
+
                   labels: [
                     "TS-4",
                     "TS-3",
@@ -826,7 +826,7 @@ angular.module('starter.controllers', [])
                 };
 
                 $scope.datamahasiswaangkatan1tahunlalu = {
-                 
+
                   labels: [
                     "TS-4",
                     "TS-3",
@@ -889,14 +889,14 @@ angular.module('starter.controllers', [])
                 url:ajaxurl+"getdatastandar34",
                 data:{"id_submission":idsubmisi},
                 headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-               
+
                     }).then(function(data){
                         console.log(data.data);
                         $scope.pelayanan = data.data;
                     },function(err){
                         console.log(err);
                     });
-            
+
     }
 
     function getdata35(){
@@ -928,7 +928,7 @@ angular.module('starter.controllers', [])
             var dt36e = data.data[4];
              var colors = ['#cc5933', '#80cc33', '#33cccc',  '#3333cc'];
 
-         
+
 
             $scope.data36a = {
                  labels: [
@@ -944,7 +944,7 @@ angular.module('starter.controllers', [])
                     dt36a.persentase_tanggapan_sangat_baik,
                     dt36a.persentase_tanggapan_baik ,
                     dt36a.persentase_tanggapan_cukup ,
-                    dt36a.persentase_tanggapan_kurang 
+                    dt36a.persentase_tanggapan_kurang
                   ],
                   backgroundColor:colors,
                   hoverBackgroundColor: colors
@@ -966,7 +966,7 @@ angular.module('starter.controllers', [])
                     dt36b.persentase_tanggapan_sangat_baik,
                     dt36b.persentase_tanggapan_baik ,
                     dt36b.persentase_tanggapan_cukup ,
-                    dt36b.persentase_tanggapan_kurang 
+                    dt36b.persentase_tanggapan_kurang
                   ],
                   backgroundColor:colors,
                   hoverBackgroundColor: colors
@@ -988,7 +988,7 @@ angular.module('starter.controllers', [])
                     dt36c.persentase_tanggapan_sangat_baik,
                     dt36c.persentase_tanggapan_baik ,
                     dt36c.persentase_tanggapan_cukup ,
-                    dt36c.persentase_tanggapan_kurang 
+                    dt36c.persentase_tanggapan_kurang
                   ],
                   backgroundColor:colors,
                   hoverBackgroundColor: colors
@@ -1010,7 +1010,7 @@ angular.module('starter.controllers', [])
                     dt36d.persentase_tanggapan_sangat_baik,
                     dt36d.persentase_tanggapan_baik ,
                     dt36d.persentase_tanggapan_cukup ,
-                    dt36d.persentase_tanggapan_kurang 
+                    dt36d.persentase_tanggapan_kurang
                   ],
                   backgroundColor:colors,
                   hoverBackgroundColor: colors
@@ -1032,7 +1032,7 @@ angular.module('starter.controllers', [])
                     dt36e.persentase_tanggapan_sangat_baik,
                     dt36e.persentase_tanggapan_baik ,
                     dt36e.persentase_tanggapan_cukup ,
-                    dt36e.persentase_tanggapan_kurang 
+                    dt36e.persentase_tanggapan_kurang
                   ],
                   backgroundColor:colors,
                   hoverBackgroundColor: colors
@@ -1066,22 +1066,22 @@ angular.module('starter.controllers', [])
                       var y = mid_radius * Math.sin(mid_angle);
 
                       ctx.fillStyle = '#fff';
-                      
+
                       var percent = String(Math.round(dataset.data[i]/total*100)) + "%";
                       ctx.fillText(dataset.data[i], model.x + x, model.y + y);
                       // Display percent in another line, line break doesn't work for fillText
                       ctx.fillText(percent, model.x + x, model.y + y + 15);
                     }
-                  });               
+                  });
                 }
               }
-                  
+
             };
 
             $scope.onChartClick = function (event) {
               console.log(event);
             };
-            
+
         },function(err){
             console.log(err);
         });
@@ -1111,30 +1111,11 @@ angular.module('starter.controllers', [])
 
         }
         return arr;
-        
+
     }
 })
 
 
-.controller('standar7Ctrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk) {
-    $scope.$parent.showHeader();
-    $scope.$parent.clearFabs();
-    $scope.isExpanded = true;
-    $scope.$parent.setExpanded(true);
-    $scope.$parent.setHeaderFab('right');
-    var idsubmisi = $stateParams.idsubmisi;
-
-    console.log(idsubmisi);
-
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideIn({
-            selector: '.animate-fade-slide-in .item'
-        });
-    }, 200);
-
-    // Activate ink for controller
-    ionicMaterialInk.displayEffect();
-})
 
 .controller('GalleryCtrl', function($scope, $stateParams, $timeout, ionicMaterialInk, ionicMaterialMotion) {
     $scope.$parent.showHeader();

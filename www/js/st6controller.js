@@ -27,7 +27,8 @@ angular.module('starter.st6controller', [])
 			getdata66($http,$scope,$stateParams);
 			getdata67($http,$scope,$stateParams);
 			getdata68($http,$scope,$stateParams);
-	    getdata69($http,$scope,$stateParams);
+			getdata69($http,$scope,$stateParams);
+	    getdata610($http,$scope,$stateParams);
 
 
 	    ionicMaterialInk.displayEffect();
@@ -65,6 +66,22 @@ function getdata69($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.peralatan69 = data.data;
+
+	},function(err){
+
+	});
+}
+function getdata610($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+
+	$http({
+		method:"post",
+		url:ajaxurl1+"getdata610",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.sisteminformasi = data.data;
 
 	},function(err){
 

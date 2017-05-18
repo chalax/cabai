@@ -103,10 +103,19 @@
               <div class="item">Kondisi	   : <span ng-if="datas.rusak==0">Terawat </span><span ng-if="datas.rusak==1">Tidak Terawat </span></div>
               <div class="item">Utilisasi (Jam/Minggu)   : {{datas.rerata_waktu_penggunaan}}</div>
             </div>
-
-
       </div>
 
+      <h3  class="calm">Sistem Informasi (aksesibilitas tiap jenis data)</h3>
+      <div class="list card" ng-repeat="data in sisteminformasi track by $index">
+         <div class="item">Jenis Data	 : {{data.jenis_data}}</div>
+         <div class="item">Sistem Pengelolaan Data	  :
+           <span ng-if="data.manual==1">manual</span>
+           <span ng-if="data.komputer_luring==1">Luar Jaringan</span>
+           <span ng-if="data.komputer_lan==1">Jaringan LAN</span>
+          <span ng-if="data.komputer_wan==1">Jaringan WAN</span>
+         </div>
+
+      </div>
 
 
         </div>
