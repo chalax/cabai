@@ -1,7 +1,22 @@
 <ion-view view-title="Friends">
     <ion-content ng-class="{expanded:isExpanded}">
         <div class="content has-header">
-            
+          <div class="content has-header">
+          <h3 class="calm">Jumlah judul penelitan yang sesuai dengan bidang keilmuan PS, yang dilakukan oleh dosen tetap yang bidang keahlianya sesuai dengan PS selama tiga tahun terakhir</h3>
+          <label class="item item-input item-select">
+              <div class="input-label">
+                Pilih Jenis Dana
+              </div>
+              <select ng-model="dt71.select">
+                <option ng-repeat="pd in penelitian71 track by $index" value="{{$index}}">{{pd.jenis_dana}}</option>
+              </select>
+          </label>
+                  <canvas
+                  tc-chartjs-bar
+                  chart-data="datapenelitian71"
+                  chart-options="myOptions"
+                  chart-click="onChartClick(event)"
+                ></canvas>
         </div>
     </ion-content>
 </ion-view>

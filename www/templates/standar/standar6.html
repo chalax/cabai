@@ -3,15 +3,14 @@
       <div class="content has-header">
             <h3>Perolehan dan alokasi Dana</h3>
             <h3 class="calm">Realisasi perolehan dan alokasi dana (termasuk hibah) dalam juta rupiah termasuk gaji, selama tiga tahun terakhir</h3>
-            <label class="item item-input item-select">
+      <label class="item item-input item-select">
 					<div class="input-label">
 					  Pilih Jenis Dana
 					</div>
-	        		<select ng-model="dt61.select">
-	        			<option ng-repeat="pd in realisasiperolehandana track by $index" value="{{$index}}">{{pd.jenis_dana}}</option>
-
-	        		</select>
-    		</label>
+      		<select ng-model="dt61.select">
+      			<option ng-repeat="pd in realisasiperolehandana track by $index" value="{{$index}}">{{pd.jenis_dana}}</option>
+      		</select>
+    	</label>
 	        		<canvas
 						  tc-chartjs-bar
 						  chart-data="realisasiperolehandanagrapik"

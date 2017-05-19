@@ -26,6 +26,8 @@ angular.module('starter.st7controller', [])
 
 function getdata711($http,$scope,$stateParams){
     var idsubmisi = $stateParams.idsubmisi;
+    $scope.dt71 = {};
+
     $http({
   		method:"post",
   		url:ajaxurl1+"getdata711",
@@ -34,8 +36,12 @@ function getdata711($http,$scope,$stateParams){
   	}).then(function(data){
   			console.log(data);
   			$scope.data711 = data.data;
-
+        $scope.penelitian71 = data.data;
   	},function(err){
 
   	});
+
+    $scope.$watch('dt71.select',function(){
+        console.log($scope.dt71.select);
+    });
 }
