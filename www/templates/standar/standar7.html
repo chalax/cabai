@@ -1,14 +1,14 @@
-<ion-view view-title="Friends">
+<ion-view view-title="PENELITIAN, PELAYANAN/PENGABDIAN KEPADA MASYARAKAT, DAN KERJASAMA">
     <ion-content ng-class="{expanded:isExpanded}">
         <div class="content has-header">
-          <div class="content has-header">
+
           <h3 class="calm">Jumlah judul penelitan yang sesuai dengan bidang keilmuan PS, yang dilakukan oleh dosen tetap yang bidang keahlianya sesuai dengan PS selama tiga tahun terakhir</h3>
           <label class="item item-input item-select">
               <div class="input-label">
-                Pilih Jenis Dana
+                Sumber Pembiayaan
               </div>
               <select ng-model="dt71.select">
-                <option ng-repeat="pd in penelitian71 track by $index" value="{{$index}}">{{pd.jenis_dana}}</option>
+                <option ng-repeat="pd in penelitian71 track by $index" value="{{$index}}">{{pd.sumber_pembiayaan}}</option>
               </select>
           </label>
                   <canvas
@@ -17,6 +17,68 @@
                   chart-options="myOptions"
                   chart-click="onChartClick(event)"
                 ></canvas>
-        </div>
+
+
+        <h3 class="calm">Judul artikel ilmiah/karya ilmiah/karya seni/buku yang dihasilkan selam tiga tahun terakhir oleh dosen tetap yang bidang keahlianya sesuai dengan PS</h3>
+        <h4 class="balanced">Artikel / Karya Ilmiah</h4>
+
+          <div class="list card" ng-repeat="data in karilm721 track by $index">
+
+            <div class="item assertive">Judu    : {{data.judul}}</div>
+            <div class="item ">Nama-Nama Dosen	 : {{data.nama_dosen}}</div>
+            <div class="item ">Dipublikasikan Pada	 : {{data.dihasilkan_pada}}</div>
+            <div class="item ">Tahun Publikasi	 : {{data.tahun}}</div>
+            <div class="item ">Tingkat* :
+              <span ng-if="data.lokal==1">Lokal</span>
+              <span ng-if="data.nasional==1">Nasional</span>
+              <span ng-if="data.internasional==1">Internasional</span>
+            </div>
+
+          </div>
+        <h4 class="balanced">Buku</h4>
+          <div class="list card" ng-repeat="data in buku722 track by $index">
+            <div class="item assertive">Judul   : {{data.judul_buku}}</div>
+            <div class="item ">Nama Penulis	 : {{data.penulis}}</div>
+            <div class="item ">Nomor ISBN	 : {{data.isbn}}</div>
+          </div>
+
+      <h3 class="calm">Karya dosen atau mahasiswa program studi yang telah memperoleh Hak atas Kekayaan Intelektual (Paten/HaKI) atau karya yang mendapat pengakuan/penghargaan dari lembaga nasional/internasional selama tiga tahun terakhir</h3>
+            <div class="list card" ng-repeat="data in karya73 track by $index">
+              <div class="item assertive">Judul   : {{data.paten}}</div>
+              <div class="item ">Nama Penulis	 : {{data.nama_karya}}</div>
+
+            </div>
+
+            <h3 class="calm">Jumlah judul penelitan yang sesuai dengan bidang keilmuan PS, yang dilakukan oleh dosen tetap yang bidang keahlianya sesuai dengan PS selama tiga tahun terakhir</h3>
+            <label class="item item-input item-select">
+                <div class="input-label">
+                  Sumber Pembiayaan
+                </div>
+                <select ng-model="dt74.select">
+                  <option ng-repeat="pd in jumlahkegiatan74 track by $index" value="{{$index}}">{{pd.sumber_dana}}</option>
+                </select>
+            </label>
+                    <canvas
+                    tc-chartjs-bar
+                    chart-data="datakegiatan74"
+                    chart-options="myOptions"
+                    chart-click="onChartClick(event)"
+                  ></canvas>
+
+      <h3 class="clam">Instansi Dalam Negeri Yang Menjalin Kerjasama* yang Terkait Dengan Program Studi/Jurusan Dalam 3 Tahun Terakhir</h3>
+      <div class="list card" ng-repeat="data in instansidaln75 track by $index">
+        <div class="item assertive">Nama Instansi	: {{data.nama_instansi}}</div>
+        <div class="item ">Jenis Kegiatan	: {{data.jenis_kegiatan}}</div>
+        <div class="item ">Kurun Waktu Kerjasama	: {{data.tgl_mulai}} s.d {{data.tgl_berakhir}}</div>
+        <div class="item ">Manfaat yang Diperoleh: {{data.manfaat_diperoleh}}</div>
+      </div>
+
+      <h3 class="clam">Tuliskan Instansi Luar Negeri Yang Menjalin Kerjasama* yang Terkait Dengan Program Studi/Jurusan Dalam 3 Tahun Terakhir</h3>
+      <div class="list card" ng-repeat="data in instansilun76 track by $index">
+        <div class="item assertive">Nama Instansi	: {{data.nama_instansi}}</div>
+        <div class="item ">Jenis Kegiatan	: {{data.jenis_kegiatan}}</div>
+        <div class="item ">Kurun Waktu Kerjasama	: {{data.tgl_mulai}} s.d {{data.tgl_berakhir}}</div>
+        <div class="item ">Manfaat yang Diperoleh: {{data.manfaat_diperoleh}}</div>
+      </div>
     </ion-content>
 </ion-view>
