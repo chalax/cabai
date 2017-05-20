@@ -21,16 +21,44 @@ angular.module('starter.st4controller', [])
     	getdata41($http,$scope,$stateParams);
     	getdata42($http,$scope,$stateParams);
     	getdata43($http,$scope,$stateParams);
-    	// getdata44($http,$scope,$stateParams);
-    	// getdata45($http,$scope,$stateParams);
+    	getdata44($http,$scope,$stateParams);
+    	getdata45($http,$scope,$stateParams);
     	getdata46($http,$scope,$stateParams);
     	getdata47($http,$scope,$stateParams);
     	getdata48($http,$scope,$stateParams);
     	getdata49($http,$scope,$stateParams);
     	getdata410($http,$scope,$stateParams);
-    	
+
     ionicMaterialInk.displayEffect();
 });
+function getdata44($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+	$http({
+		method:"post",
+		url:ajaxurl+"getdata44",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.dataajar44 = data.data;
+	},function(err){
+    console.log(err);
+	})
+}
+function getdata45($http,$scope,$stateParams){
+	var idsubmisi = $stateParams.idsubmisi;
+	$http({
+		method:"post",
+		url:ajaxurl+"getdata45",
+		data:{"id_submission":idsubmisi},
+        headers: {'Content-Type':'application/x-www-form-urlencoded'}
+	}).then(function(data){
+			console.log(data);
+			$scope.dataajar45 = data.data;
+	},function(err){
+    console.log(err);
+	})
+}
 function getdata410($http,$scope,$stateParams){
 	var idsubmisi = $stateParams.idsubmisi;
 	$http({
@@ -41,8 +69,8 @@ function getdata410($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.peningkatandosen = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	})
 }
 function getdata49($http,$scope,$stateParams){
@@ -55,8 +83,8 @@ function getdata49($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.seminartenagaahli = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	})
 }
 function getdata41($http,$scope,$stateParams){
@@ -69,8 +97,8 @@ function getdata41($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.datadosen = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	})
 }
 function getdata42($http,$scope,$stateParams){
@@ -83,8 +111,8 @@ function getdata42($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.datadosensesuaibidangps = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	})
 }
 
@@ -98,8 +126,8 @@ function getdata43($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.dataajar1 = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	})
 }
 //////////////////////////////////////////////
@@ -116,8 +144,8 @@ function getdata46($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.dataajardosentidaktetap = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	})
 }
 function getdata47($http,$scope,$stateParams){
@@ -130,8 +158,8 @@ function getdata47($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.datadosentt = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	})
 }
 function getdata48($http,$scope,$stateParams){
@@ -144,7 +172,7 @@ function getdata48($http,$scope,$stateParams){
 	}).then(function(data){
 			console.log(data);
 			$scope.dataajardtt = data.data;
-	},function(err){	
-		
+	},function(err){
+
 	})
 }

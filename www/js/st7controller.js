@@ -70,6 +70,7 @@ function getdata76($http,$scope,$stateParams){
       console.log(data);
       $scope.instansilun76 = data.data;
 
+
   },function(err){
 
   });

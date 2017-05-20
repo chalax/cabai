@@ -1,6 +1,6 @@
-<ion-view view-title="Sikaprodi">
+<ion-view view-title="Data Borang Akreditasi">
     <ion-content ng-class="{expanded:$scope.isExpanded}">
-        <div class="hero slide-up" style="background-image: url('img/polinelabg.jpg');">
+        <div class="hero slide-up" style="background-image: url('img/material-graphite.jpg');">
             <div class="content">
                 <div class="avatar" style="background-image: url('img/polinela.jpg');"></div>
                 <h3><a class="light">{{loggedinuserdata.user_realname}}</a></h3>
@@ -9,16 +9,16 @@
         </div>
         <h4 class="content padding double-padding-x">Data Ajuan Akreditasi</h4>
         <div class="list animate-fade-slide-in-right">
-           
+
               <a ng-repeat="submisi in submissions track by $index" href="#/app/detailajuan/{{submisi.id_submission}}" class="item item-icon-right">
-                    
+
                     <h2>{{submisi.ps}}</h2>
                     <p>{{submisi.tahun}}</p>
                     <i class="icon ion-ios-arrow-right"></i>
                 </a>
 
-            
-            
+
+
         </div>
     </ion-content>
 </ion-view>
