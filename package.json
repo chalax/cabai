@@ -1,7 +1,7 @@
 {
-  "name": "sikaprodi",
+  "name": "DBAPS Polinela",
   "version": "1.1.1",
-  "description": "sikaprodi: An Ionic project",
+  "description": "Data Borang Akreditasi Program Studi",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

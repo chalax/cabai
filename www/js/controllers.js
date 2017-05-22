@@ -165,41 +165,59 @@ angular.module('starter.controllers', [])
     $scope.isExpanded = false;
     $scope.$parent.setExpanded(false);
     $scope.$parent.setHeaderFab(false);
+    $scope.dataloaded = false;
+    $scope.loadingdata = false;
+    loaddata();
+    // performanimationpage();
+    $scope.reloaddata =function(){
+      loaddata();
+      console.log("reloadingdata");
+    }
+    function loaddata(){
+      $scope.loadingdata = true;
+      $http({
+              method:"post",
+              url: ajaxurl+"submissions",
+              data:$rootScope.loggedinuserdata,
+              headers: {'Content-Type': 'application/x-www-form-urlencoded'}
+          }).then(function(data){
+              console.log(data);
 
-    $http({
-            method:"post",
-            url: ajaxurl+"submissions",
-            data:$rootScope.loggedinuserdata,
-            headers: {'Content-Type': 'application/x-www-form-urlencoded'}
-        }).then(function(data){
-            console.log(data);
+              $scope.submissions = data.data;
+              $scope.dataloaded = true;
+              $scope.loadingdata=false;
+              performanimationpage();
 
-            $scope.submissions = data.data;
-
-
-    },function(err){
-        console.log(err);
-    });
-
-
-    // Set Motion
-    $timeout(function() {
-        ionicMaterialMotion.slideUp({
-            selector: '.slide-up'
-        });
-    }, 300);
-
-    $timeout(function() {
-        ionicMaterialMotion.fadeSlideInRight({
-            startVelocity: 3000
-        });
-    }, 700);
-
-    // Set Ink
+      },function(err){
+          console.log(err);
+          $scope.loadingdata = false;
+      });
+    }
 
 
+    function performanimationpage(){
+      if($scope.dataloaded){
+        // Set Motion
+        $timeout(function() {
+            ionicMaterialMotion.slideUp({
+                selector: '.slide-up'
+            });
+        }, 300);
 
-    ionicMaterialInk.displayEffect();
+        $timeout(function() {
+            ionicMaterialMotion.fadeSlideInRight({
+                startVelocity: 3000
+            });
+        }, 700);
+
+        // Set Ink
+
+
+
+        ionicMaterialInk.displayEffect();
+      }
+    }
+
 })
 
 .controller('detailajuanCtrl', function($scope, $stateParams, $timeout, ionicMaterialMotion, ionicMaterialInk,$state) {
