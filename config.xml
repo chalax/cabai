@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.ionicframework.sikaprodi121524" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-  <name>sikaprodi</name>
+<widget id="com.chalax.sikaprodimobile" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+  <name>DBAPS Polinela</name>
   <description>
-        An Ionic Framework and Cordova project.
+        Data Borang Akreditasi Program Studi
     </description>
-  <author email="you@example.com" href="http://example.com/">
-      Your Name Here
+  <author email="chalax77@gmail.com" href="https://fb.me/chalax/">
+      chalax
     </author>
   <content src="index.html"/>
   <access origin="*"/>
