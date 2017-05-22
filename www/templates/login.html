@@ -11,7 +11,7 @@
             <ion-md-input ng-model="datalogin.password" placeholder="Password" highlight-color="positive" type="password"></ion-md-input>
         </div>
         <div class="padding">
-            <button ng-click="performlogin(datalogin)" class="button button-full button-positive ink">Login</button>
+            <button ng-click="performlogin(datalogin)" class="button button-full button-positive ink"><ion-spinner ng-show="loggingin" icon="spiral"></ion-spinner> Login</button>
         </div>
 
     </ion-content>

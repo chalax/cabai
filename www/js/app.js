@@ -4,8 +4,10 @@
 // 'starter' is the name of this angular module example (also set in a <body> attribute in index.html)
 // the 2nd parameter is an array of 'requires'
 // 'starter.controllers' is found in controllers.js
-var ajaxurl = "http://127.0.0.1/sikaprodi2/mctrl/";
-var ajaxurl1 = "http://127.0.0.1/sikaprodi2/mctrl1/";
+var ajaxurl = "http://103.247.11.152/~chalax/mctrl/";
+var ajaxurl1 = "http://103.247.11.152/~chalax/mctrl1/";
+// var ajaxurl = "http://127.0.0.1/sikaprodi2/mctrl/";
+// var ajaxurl1 = "http://127.0.0.1/sikaprodi2/mctrl1/";
 angular.module('starter', ['ionic', 'starter.controllers','starter.st4controller','starter.st5controller','starter.st6controller','starter.st7controller', 'ionic-material', 'ionMdInput','tc.chartjs'])
 
 .run(function($ionicPlatform) {

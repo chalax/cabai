@@ -100,6 +100,7 @@ angular.module('starter.controllers', [])
 
 .controller('LoginCtrl', function($scope, $timeout, $stateParams, ionicMaterialInk,$http,$rootScope,$state) {
     $scope.$parent.clearFabs();
+    $scope.loggingin = false;
     $timeout(function() {
         $scope.$parent.hideHeader();
     }, 0);
@@ -112,6 +113,7 @@ angular.module('starter.controllers', [])
 
     $scope.performlogin = function(){
         console.log($rootScope.datalogin);
+        $scope.loggingin = true;
         $http({
             method:"post",
             url: ajaxurl+"userauth",
@@ -126,10 +128,12 @@ angular.module('starter.controllers', [])
                 console.log($scope.loggedinuserdata);
                 $state.go("app.beranda");
             }else{
-                console.log("login failed");
-                console.log(logindataresult);
+                alert("login failed");
+                $scope.loggingin = false;
             }
         },function(err){
+          $scope.loggingin = false;
+          alert("Login Failed");
             console.log(err);
         });
     }
