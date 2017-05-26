@@ -2,7 +2,7 @@
     <ion-content ng-class="{expanded:$scope.isExpanded}">
       <div class="item" ng-show="loadingdata"><ion-spinner icon="spiral"></ion-spinner></div>
         <div class="item" ng-show="!dataloaded && !loadingdata">
-            Loading failed <button ng-click="reloaddata()" class="button button-positive">Reload</button>
+            Loading failed <br> <button ng-click="reloaddata()" class="button button-block button-positive">Reload</button>
         </div>
 
         <div class="hero slide-up" style="background-image: url('img/material-graphite.jpg');">

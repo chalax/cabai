@@ -1,7 +1,7 @@
 <ion-view view-title="KURIKULUM, PEMBELAJARAN, DAN SUASANA AKADEMIK">
     <ion-content ng-class="{expanded:isExpanded}">
-        <div class="content has-header">
-            
+        <div class="content">
+
 			  <h3 class="calm">Struktur Kurikulum</h3>
              <div class="list card" ng-repeat="data in strukturkurikulum track by $index">
              	<div class="item">Semester		:	  {{data.semester}}</div>
@@ -16,8 +16,8 @@
              	<div class="item">Kelengkapan Silabus		:	  {{data.kelengkapan_silabus}}</div>
              	<div class="item">Kelengkapan SAP	:	  {{data.kelengkapan_sap}}</div>
              	<div class="item">Unit/jur/fak Penyelenggara	:	  {{data.unit_penyelenggara}}</div>
-             	
-             	
+
+
              </div>
 
 
@@ -27,13 +27,13 @@
              	<div class="item">Judul/Modul			:	  {{data.judul_modul}}</div>
              	<div class="item">Jam Pelaksanaan		:	  {{data.jam_pelaksanaan}}</div>
              	<div class="item">Tempat/Lokasi Praktikum/Praktek		:	  {{data.tempat_praktikum}}</div>
-             	
+
              </div>
 
              <h3 class="calm">Contoh soal ujian dalam satu tahun terakhir untuk 5 mata kuliah keahlian berikut silabusnya</h3>
              <div class="list card">
              	<div class="item assertive">Semester Ganjil</div>
-             	<div class="item item-icon-right" ng-repeat="data in contohsoalujian[0] track by $index">{{data.kode_nama_makul}} 
+             	<div class="item item-icon-right" ng-repeat="data in contohsoalujian[0] track by $index">{{data.kode_nama_makul}}
  				<i ng-click="savefile({{data.id_attachmentfile}})" class="icon ion-android-archive"></i>
              	</div>
              </div>
@@ -52,7 +52,7 @@
              	<div class="item">Alasan Peninjauan		 : {{data.alasan_peninjauan}}</div>
              	<div class="item">Atas Usulan/Masukan dari		 : {{data.usulan_dari}}</div>
              	<div class="item">Berlaku Mulai Sem./Th.	 : {{data.berlaku_mulai}}</div>
-             	
+
              </div>
 
              <h3 class="calm">Dosen pembimbing akademik/wali dan jumlah mahasiswa yang dibimbingnya</h3>
@@ -60,24 +60,24 @@
              	<div class="item">Nama Dosen 		 : {{data.nama_dosen}}</div>
              	<div class="item">Jumlah Mahasiswa Bimbingan		 : {{data.jumlah_mahasiswa}}</div>
              	<div class="item">Rata-rata Pertemuan/mhs/semester	 : {{data.rerata_pertemuan}}</div>
-             	
-             	
+
+
              </div>
              <h3 class="calm">Dosen yang menjadi pembimbing karya/tugas akhir, dan jumlah mahasiswa bimbinganya</h3>
              <div class="list card" ng-repeat="data in pembimbingta track by $index">
              	<div class="item">TH	 : -{{data.th}}</div>
              	<div class="item">Nama Dosen 		 : {{data.nama_dosen}}</div>
              	<div class="item">Jumlah Mahasiswa Bimbingan		 : {{data.jumlah_mahasiswa}}</div>
-             	
-             	
+
+
              </div>
              <h3 class="calm">Keselamatan Kerja</h3>
              <div class="list card" ng-repeat="data in keselamatankerja track by $index">
-             	
+
              	<div class="item">Nama Peralatan/Bahan 		 : {{data.nama_peralatan}}</div>
              	<div class="item">Fungsi		 : {{data.fungsi}}</div>
-             	
-             	
+
+
              </div>
 
 
