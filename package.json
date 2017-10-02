@@ -1,7 +1,7 @@
 {
-  "name": "DBAPS Polinela",
+  "name": "Konsultasi Cabai",
   "version": "1.1.1",
-  "description": "Data Borang Akreditasi Program Studi",
+  "description": "Konsultasi Budidaya Tanaman Cabai",
   "dependencies": {
     "gulp": "^3.5.6",
     "gulp-sass": "^2.0.4",

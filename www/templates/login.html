@@ -1,18 +1,28 @@
 <ion-view view-title="Login" align-title="left">
-    <ion-content style="background: url(img/material-graphite.jpg) center; background-size: cover;">
+    <ion-content style="background: url(img/cabaibg.jpg) center; background-size: cover;">
         <div class="hero no-header flat">
             <div class="content">
                 <div class="app-icon"></div>
-                <h4>Data Borang Akreditasi Program Studi</h4>
+                <h4>Konsultasi Budidaya Tanaman Cabai</h4>
             </div>
         </div>
+
         <div class="list">
-            <ion-md-input ng-model="datalogin.username" placeholder="Username" highlight-color="positive" type="text"></ion-md-input>
+            <div class="item assertive bg-assertive">{{message}}
+            </div>
+            <ion-md-input ng-model="datalogin.username" placeholder="Email" highlight-color="positive" type="text"></ion-md-input>
             <ion-md-input ng-model="datalogin.password" placeholder="Password" highlight-color="positive" type="password"></ion-md-input>
         </div>
         <div class="padding">
-            <button ng-click="performlogin(datalogin)" class="button button-full button-positive ink"><ion-spinner ng-show="loggingin" icon="spiral"></ion-spinner> Login</button>
+            <button ng-click="performlogin(datalogin)" class="button button-positive ink"><ion-spinner ng-show="loggingin" icon="spiral"></ion-spinner> Login</button>
+           <!--  <button ng-click="loginwithgmail()" class="button button-positive ink"><ion-spinner ng-show="loggingin" icon="spiral"></ion-spinner> google</button>
+ -->
+            <a class="button button-calm ink" ng-click="gotoregister()">Register</a>
         </div>
-
+        <!-- <div class="button-bar social-login">
+            <button ng-click="loginwith('google')" class="button button-small button-border icon-left ion-social-google button-assertive-900">Google+</button>
+            <button ng-click="loginwith('twitter')" class="button button-small button-border icon-left ion-social-twitter button-calm-900">Twitter</button>
+            <button ng-click="loginwith('facebook')" class="button button-small button-border icon-left ion-social-facebook button-positive-900">Facebook</button>
+        </div> -->
     </ion-content>
 </ion-view>

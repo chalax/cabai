@@ -8,9 +8,13 @@ var ajaxurl = "http://103.247.11.152/~chalax/mctrl/";
 var ajaxurl1 = "http://103.247.11.152/~chalax/mctrl1/";
 // var ajaxurl = "http://127.0.0.1/sikaprodi2/mctrl/";
 // var ajaxurl1 = "http://127.0.0.1/sikaprodi2/mctrl1/";
-angular.module('starter', ['ionic', 'starter.controllers','starter.st4controller','starter.st5controller','starter.st6controller','starter.st7controller', 'ionic-material', 'ionMdInput','tc.chartjs'])
-
-.run(function($ionicPlatform) {
+angular.module('starter', ['ionic', 'starter.controllers','ionic-material', 'ionMdInput','tc.chartjs','firebase','froala'])
+.factory("Auth", ["$firebaseAuth",
+  function($firebaseAuth) {
+    return $firebaseAuth();
+  }
+])
+.run(function($ionicPlatform,$firebaseAuth) {
     $ionicPlatform.ready(function() {
         // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
         // for form inputs)
@@ -21,8 +25,17 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.st4controller
             // org.apache.cordova.statusbar required
             StatusBar.styleDefault();
         }
+
+
+        
+
+
+          
+
+
     });
 })
+
 
 .config(function($stateProvider, $urlRouterProvider, $ionicConfigProvider) {
 
@@ -34,6 +47,18 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.st4controller
     $ionicConfigProvider.backButton.previousTitleText(false);
     */
 
+    var config = {
+            apiKey: "AIzaSyDedQHEcVmpizRRxcxDPUSW1wO3bM92QtY",
+            authDomain: "konsultasi-cabai.firebaseapp.com",
+            databaseURL: "https://konsultasi-cabai.firebaseio.com",
+            projectId: "konsultasi-cabai",
+            storageBucket: "konsultasi-cabai.appspot.com",
+            messagingSenderId: "73163022288"
+          };
+          firebase.initializeApp(config);
+
+
+
     $stateProvider.state('app', {
         url: '/app',
         abstract: true,
@@ -41,97 +66,7 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.st4controller
         controller: 'AppCtrl'
     })
 
-    .state('app.detailajuan', {
-        url: '/detailajuan/:idsubmisi',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/detailajuan.html',
-                controller: 'detailajuanCtrl'
-            }
-        }
-    })
-
-     .state('app.standar3', {
-        url: '/standar3/:idsubmisi',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/standar/standar3.html',
-                controller: 'standar3Ctrl'
-            }
-        }
-    })
-     .state('app.standar4', {
-        url: '/standar4/:idsubmisi',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/standar/standar4.html',
-                controller: 'standar4Ctrl'
-            }
-        }
-    })
-     .state('app.standar5', {
-        url: '/standar5/:idsubmisi',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/standar/standar5.html',
-                controller: 'standar5Ctrl'
-            }
-        }
-    })
-     .state('app.standar6', {
-        url: '/standar6/:idsubmisi',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/standar/standar6.html',
-                controller: 'standar6Ctrl'
-            }
-        }
-    })
-     .state('app.standar7', {
-        url: '/standar7/:idsubmisi',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/standar/standar7.html',
-                controller: 'standar7Ctrl'
-            }
-        }
-    })
-
-    .state('app.friends', {
-        url: '/friends',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/friends.html',
-                controller: 'FriendsCtrl'
-            },
-            'fabContent': {
-                template: '<button id="fab-friends" class="button button-fab button-fab-top-left expanded button-energized-900 spin"><i class="icon ion-chatbubbles"></i></button>',
-                controller: function ($timeout) {
-                    $timeout(function () {
-                        document.getElementById('fab-friends').classList.toggle('on');
-                    }, 900);
-                }
-            }
-        }
-    })
-
-    .state('app.gallery', {
-        url: '/gallery',
-        views: {
-            'menuContent': {
-                templateUrl: 'templates/gallery.html',
-                controller: 'GalleryCtrl'
-            },
-            'fabContent': {
-                template: '<button id="fab-gallery" class="button button-fab button-fab-top-right expanded button-energized-900 drop"><i class="icon ion-heart"></i></button>',
-                controller: function ($timeout) {
-                    $timeout(function () {
-                        document.getElementById('fab-gallery').classList.toggle('on');
-                    }, 600);
-                }
-            }
-        }
-    })
+    
 
     .state('app.login', {
         url: '/login',
@@ -146,12 +81,52 @@ angular.module('starter', ['ionic', 'starter.controllers','starter.st4controller
         }
     })
 
+    .state('app.register', {
+        url: '/register',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/register.html',
+                controller: 'RegisterCtrl'
+            },
+            'fabContent': {
+                template: ''
+            }
+        }
+    })
+
     .state('app.beranda', {
         url: '/beranda',
         views: {
             'menuContent': {
                 templateUrl: 'templates/beranda.html',
-                controller: 'ProfileCtrl'
+                controller: 'BerandaCtrl'
+            }
+        }
+    })
+    .state('app.newartikel', {
+        url: '/newartikel',
+        views: {
+            'menuContent': {
+                templateUrl: 'templates/newartikel.html',
+                controller: 'NewArtikelCtrl'
+            }
+        }
+    })
+    .state('app.detailartikel',{
+        url:'/detailartikel/:idartikel',
+        views:{
+            'menuContent':{
+                templateUrl:'templates/detailartikel.html',
+                controller:'DetailArtikelCtrl'
+            }
+        }
+    })
+    .state('app.ruangdiskusi',{
+        url:'/ruangdiskusi',
+        views:{
+            'menuContent':{
+                templateUrl:'templates/ruangdiskusi.html',
+                controller:'RuangDiskusiCtrl'
             }
         }
     })
